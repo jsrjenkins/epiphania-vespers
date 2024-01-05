@@ -1,0 +1,63 @@
+%%% This is the Main tex document that performs the layout. 
+%%% You will need to compile this using LuaLaTeX with the --shell-escape option
+
+\documentclass[a4paper,twoside,11pt]{article}%% change size of font to fit in 8 pages
+
+\newcommand{\lang}{english} %which language translation. %
+
+%%%% some other preferences, not necessary to change.
+\setlength\parindent{0cm} % Paragraph indentation
+\usepackage[top=15mm, bottom=20mm, outer=15mm, inner=15mm]{geometry}% Margins
+\usepackage[autocompile]{gregoriotex}% for layout of gregorian chant
+\gresetlinecolor{gregoriocolor}%% red score lines in chants
+
+\usepackage{fontspec}% necessary for gregorio
+\usepackage{libertine}% the font %
+\usepackage{xstring}% for calendar comparisons
+\usepackage{paracol}% for parallel columns
+
+\usepackage[latin,\lang]{babel} % the languages for hyphenation, etc.
+\usepackage{vesperale} %% vespers style sheet has macros for typesetting
+%\usepackage{calendar} %% for the selection of propria
+
+%%%% some experimental preferences, not yet very effective:
+%\setlength{\columnsep}{5mm}%% separation between columns
+%\setlength{\columnseprule}{0.2pt}%% column rule
+
+\begin{document}
+  \begin{center}
+    \huge{\textbf{Epiphania Domini}}\\
+    \large{Ad I Vesperas}%%
+  \end{center}
+
+\section*{Initium}
+\versiculus{or--deus_in_adjutorium--solesmes}  
+\section*{Psalmi}
+\psalmus{an--ante_luciferum_genitus--solesmes}{109-2D}
+\psalmus{an--venit_lumen_tuum--solesmes}{110-1g2}
+\psalmus{an--apertis_thesauris--solesmes}{111-1g2}
+\psalmus{an--maria_et_flumina--solesmes}{112-4E}
+\psalmus{an--stella_ista--solesmes}{116-7c2}
+\section*{Capitulum}
+\text{capitulum-5-jan}
+\section*{Hymnus}
+\hymnus{hy--crudelis_herodes_deum--solesmes}{reges-tharsis}{reges-arabum}
+\section*{Canticum}
+\psalmus{an--magi_videntes_stellam--solesmes}{Magnificat-8G}
+\section*{Oratio}
+\text{oratio}
+\section*{Conclusio}
+\versiculus{or--benedicamus_in_i_vesperis--solesmes}
+\vskip .5cm
+\text{fidelium}  
+
+%%%  end of document%
+\end{document}%assumptio/gabc/
+%%% Emacs stuff %%%
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-engine: luatex
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
